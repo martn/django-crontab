@@ -63,10 +63,10 @@ class Crontab(object):
 
         # Write prefix first
         for line in self.settings.CRONTAB_ENV:
-            tmp.write(line)
+            tmp.write(line + "\n")
 
         # Add empty line
-        tmp.write("")
+        tmp.write("\n")
 
         for line in self.crontab_lines:
             tmp.write(line)

@@ -60,6 +60,14 @@ class Crontab(object):
         fd, path = tempfile.mkstemp()
         # write all the lines in the internal buffer to the temporary file
         tmp = os.fdopen(fd, 'w')
+
+        # Write prefix first
+        for line in self.settings.CRONTAB_ENV:
+            tmp.write(line)
+
+        # Add empty line
+        tmp.write("")
+
         for line in self.crontab_lines:
             tmp.write(line)
         tmp.close()

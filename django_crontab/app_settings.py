@@ -44,4 +44,7 @@ class Settings():
         self.COMMAND_PREFIX = getattr(settings, 'CRONTAB_COMMAND_PREFIX', '')
         self.COMMAND_SUFFIX = getattr(settings, 'CRONTAB_COMMAND_SUFFIX', '')
 
+        # List of env strings
+        self.CRONTAB_ENV = getattr(settings, 'CRONTAB_ENV', [])
+
         self.LOCK_JOBS = getattr(settings, 'CRONTAB_LOCK_JOBS', False)
